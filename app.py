@@ -16,8 +16,6 @@ with col1:
        filename, extension = uploaded_file.name.split('.')
        
        print(filename)
-       st.write(filename)
-       st.write(extension)
        print(extension)
        
        st.image(img, caption="上传的图片")

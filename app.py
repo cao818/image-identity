@@ -17,28 +17,24 @@ with col1:
         st.image(img, caption="上传的图片")
 
 
-# 从第7个字符开始读取文件名
-new_filename = filename[6:]
+# 从第5个字符开始读取文件名
+new_filename = filename[4:]
 
 with col2:
-    st.title("图片识别结果")
+    st.title("纹样仿真结果")
     st.write("")
     st.write("")
     with st.container():
-        if st.button("纹路抽取"):
+        if st.button("纹样仿真"):
             time.sleep(3.2)
             
             
-            image_path = 'images/' + new_filename + extension_const
+            image_path = 'images/' +'输出'+ new_filename + extension_const
             image = Image.open(image_path)
             st.image(image)
 
-    with st.container():
-        if st.button("纹样判断"):
-            time.sleep(2)
-            st.title(new_filename)  # 使用新的文件名
 
     with st.container():
-        if st.button("预测结果"):
+        if st.button("仿真结果"):
             time.sleep(1.7)
             st.title("成功")

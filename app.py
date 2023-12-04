@@ -17,7 +17,7 @@ with col1:
        st.image(img, caption="上传的图片")
 
 with col2:
-    st.title("仿真")
+    st.title("图片识别结果")
     st.write("")
     st.write("")
     with st.container():

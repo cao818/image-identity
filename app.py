@@ -16,6 +16,9 @@ with col1:
         filename, extension = uploaded_file.name.split('.')
         st.image(img, caption="上传的图片")
 
+        # 在这里定义 new_filename
+        new_filename = filename[6:]
+
 with col2:
     st.title("图片识别结果")
     st.write("")
@@ -24,8 +27,7 @@ with col2:
         if st.button("纹路抽取"):
             time.sleep(3.2)
             
-            # 从第7个字符开始读取文件名
-            new_filename = filename[6:]
+            # 使用 new_filename
             image_path = 'images/' + new_filename + extension_const
             image = Image.open(image_path)
             st.image(image)
@@ -33,7 +35,9 @@ with col2:
     with st.container():
         if st.button("纹样判断"):
             time.sleep(2)
-            st.title(new_filename)  # 使用新的文件名
+            # 检查 new_filename 是否被定义
+            if 'new_filename' in locals():
+                st.title(new_filename)
 
     with st.container():
         if st.button("预测结果"):

@@ -17,6 +17,7 @@ with col1:
         st.image(img, caption="上传的图片")
 
 
+# 假设col2是一个已定义的列
 with col2:
     st.title("图片识别结果")
     st.write("")
@@ -24,24 +25,19 @@ with col2:
     with st.container():
         if st.button("纹路抽取"):
             time.sleep(3.2)
-            
-            # 显示四种不同的纹路图片
-            image_names = ['四瓣朵花纹', '八瓣朵花纹', '米字朵花纹', '四合如意纹']
-            for name in image_names:
-                image_path = 'images/' + name
-                image = Image.open(image_path)
-                st.image(image)
+            image_path = 'images/' + '1' + '.png'  # 确保这里的文件扩展名与你的图片匹配
+            image = Image.open(image_path)
+            st.image(image)
 
     with st.container():
         if st.button("纹样判断"):
             time.sleep(2)
-            # 这里需要你的逻辑来决定显示哪个纹样名称
-            # 例如，你可以根据用户的选择或某些条件来设置 new_filename
-            # 下面是一个示例：
-            new_filename = "四瓣朵花纹、八瓣朵花纹、米字朵花纹、四合如意纹"
-            st.title(new_filename)
+            # 输出结果，用换行符分隔
+            result = "四瓣朵花纹\n八瓣朵花纹\n米字朵花纹\n四合如意纹"
+            st.write(result)
 
     with st.container():
         if st.button("预测结果"):
             time.sleep(1.7)
             st.title("成功")
+

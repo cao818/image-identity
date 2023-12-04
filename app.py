@@ -36,12 +36,12 @@ with col2:
     with st.container():
         if st.button("纹样判断"):
             time.sleep(2)
-            st.image(filename)
+            st.title(filename)
 
     with st.container():
         if st.button("预测结果"):
             time.sleep(1.7)
-            st.write("成功")
+            st.title("成功")
 
 
 

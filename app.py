@@ -3,6 +3,7 @@ from PIL import Image
 import time
 import os
 
+filename=''
 extension_const = '.png'
 base_dir='images/'
 col1, col2 = st.columns(2)
@@ -13,8 +14,12 @@ with col1:
    if uploaded_file is not None:
        img = Image.open(uploaded_file)
        filename, extension = uploaded_file.name.split('.')
+       
        print(filename)
+       st.write(filename)
+       st.write(extension)
        print(extension)
+       
        st.image(img, caption="上传的图片")
 
 with col2:
@@ -25,8 +30,10 @@ with col2:
         if st.button("纹路抽取"):
             time.sleep(3.2)
             
-            image_path =filename + extension
-            st.image(image_path)
+            filename, extension = uploaded_file.name.split('.')
+            image_path ='images/'+filename + extension_const
+            image = Image.open(image_path)
+            st.image(image)
 
     with st.container():
         if st.button("纹样判断"):

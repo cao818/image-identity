@@ -34,8 +34,10 @@ with col2:
             # 这里需要你的逻辑来决定显示哪个纹样名称
             # 例如，你可以根据用户的选择或某些条件来设置 new_filename
             # 下面是一个示例：
-            new_filename = "四瓣朵花纹\n八瓣朵花纹\n米字朵花纹\n四合如意纹"
-            st.title(new_filename)
+            st.title("四瓣朵花纹")
+            st.title("八瓣朵花纹")
+            st.title("米字朵花纹")
+            st.title("四合如意纹")
 
     with st.container():
         if st.button("预测结果"):

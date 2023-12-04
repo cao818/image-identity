@@ -13,11 +13,7 @@ with col1:
    uploaded_file = st.file_uploader("选择一个图片文件", type=["jpg", "jpeg", "png"])
    if uploaded_file is not None:
        img = Image.open(uploaded_file)
-       filename, extension = uploaded_file.name.split('.')
-       
-       print(filename)
-       print(extension)
-       
+       filename, extension = uploaded_file.name.split('.')  
        st.image(img, caption="上传的图片")
 
 with col2:

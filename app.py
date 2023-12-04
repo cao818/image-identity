@@ -36,7 +36,7 @@ with col2:
     with st.container():
         if st.button("纹样判断"):
             time.sleep(2)
-            st.write(filename)
+            st.title(filename)
 
     with st.container():
         if st.button("预测结果"):
